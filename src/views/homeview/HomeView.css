@@ -1,0 +1,147 @@
+.homeview-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ambient glow orbs */
+.ambient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.28;
+}
+
+.glow-1 {
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-gradient-start), transparent 70%);
+}
+
+.glow-2 {
+  top: 35%;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--accent-gradient-end), transparent 70%);
+}
+
+.glow-3 {
+  top: 70%;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #06b6d4, transparent 70%);
+}
+
+.homeview-container {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  flex: 1;
+}
+
+.homeview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* Shared section card layout */
+.section-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 1.6rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.section-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--badge-bg);
+  color: var(--accent-primary);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .homeview-container {
+    padding: 0 0.85rem;
+  }
+  .section-card {
+    padding: 1.35rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+  .section-title {
+    font-size: 1.15rem;
+  }
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
